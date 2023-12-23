@@ -20,8 +20,32 @@ public class Exercise07 {
         try(Scanner scanner = new Scanner(System.in))
         {
             System.out.print("Nhập vào một số nguyên: ");
-            int n = scanner.nextInt();
+            int N = scanner.nextInt();
+            System.out.println("Phân tích "+ N + " ra thừa số nguyên tố:");
+            int n = N;
+            for(int i=2; i<=n;i++)
+            {
+                while(n%i==0)
+                {
+                   n=n/i;
+                   if(n==1)
+                       System.out.print(i);
+                   else
+                       System.out.print(i+" x ");
+                }
+                if (n==1)
+                   break;
+
+            }
             
+            System.out.println("\n");
+            int dem = 0;
+            while(N>=10)
+            {
+                N/= 10;
+                dem++;
+            }
+            System.out.println("Số chữ số của "+ N + " là: "+(dem + 1)); 
         }
     }
     
