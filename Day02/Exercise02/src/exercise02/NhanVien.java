@@ -4,11 +4,13 @@
  */
 package exercise02;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Tuyet Chinh
  */
-public class NhanVien {
+public final class NhanVien {
     private String ms, ht;
     public String getMs()
     {
@@ -62,9 +64,9 @@ public class NhanVien {
     
     public NhanVien()
     {
-//        SetMs("1001");
-//        SetHt(" ");
-//        SetNc(0);
+        this.ms = "";
+        this.ht = " ";
+        this.nc = 0;
     }
     public NhanVien(String ma, String ten, int nc)
     {
@@ -72,9 +74,46 @@ public class NhanVien {
         this.setHt(ten);
         this.setNc(nc);
     }
-    public NhanVien(NhanVien a)
+
+    public void Nhap()
     {
+        try (Scanner scanner = new Scanner(System.in).useDelimiter("\n")) {
+            System.out.print("Nhập mã số:");
+            ms = scanner.next();
+            System.out.print("Nhập họ tên: ");
+            ht = scanner.next();
+            System.out.print("Nhập số ngày công: ");
+            nc = scanner.nextInt();
+        }
         
-        
+    }
+    
+    public void Xuat()
+    {
+        System.out.println("Mã số: "+ ms);
+        System.out.println("Họ tên: "+ht);
+        System.out.println("Ngày công: "+ nc);
+        System.out.println("Xếp loại: "+getXL());
+        System.out.println("Lương: "+tinhLuong());
+        System.out.println("Thưởng: "+tinhThuong());
+    }
+    
+    public double tinhLuong()
+    {
+        return nc * NhanVien.luong;
+    }
+    
+    public double tinhThuong()
+    {
+        if(getXL() == 'A')
+        {
+            return tinhLuong() * 5/ 100;
+        }
+        else if(getXL() == 'B')
+            {
+                return tinhLuong() * 2/ 100;
+            }
+        else
+            return 0;
     }
 }
