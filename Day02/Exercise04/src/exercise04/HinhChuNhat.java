@@ -12,6 +12,8 @@ import java.util.Scanner;
  */
 public class HinhChuNhat {
     private int d, r;
+
+    
     public int getChieuDai()
     {
         return d;
@@ -62,13 +64,12 @@ public class HinhChuNhat {
       
    public void Nhap()
    {
-        try (Scanner scanner = new Scanner(System.in).useDelimiter("\n"))
-        {
-            System.out.print("Nhập chiều dài: ");
+       Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+       System.out.print("Nhập chiều dài: ");
             this.d = scanner.nextInt();
             System.out.print("Nhập chiều rộng: ");
             this.r = scanner.nextInt();
-        }
+            
    }
     //   Đinh Thị Tuyết Chinh
    public void Xuat()
