@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+
+
+<DanhSach>
+    <GV>
+        <HoTen>Nguyễn Văn E</HoTen>
+        <SoNhom>2</SoNhom>
+    </GV>
+    <GV>
+        <HoTen>Trần Thị A</HoTen>
+        <SoNhom>1</SoNhom>
+    </GV>
+    <GV>
+        <HoTen>Phạm Công D</HoTen>
+        <SoNhom>1</SoNhom>
+    </GV>
+    <GV>
+        <HoTen>Lê Huỳnh C</HoTen>
+        <SoNhom>1</SoNhom>
+    </GV>
+    <GV>
+        <HoTen>Dương Văn B</HoTen>
+        <SoNhom>2</SoNhom>
+    </GV>
+</DanhSach>
+
