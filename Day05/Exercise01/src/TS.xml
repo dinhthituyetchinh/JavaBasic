@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+
+<DSSV>
+  <ThiSinh>
+    <SBD>SV001</SBD>
+    <HT>Nguyen Van An</HT>
+    <NamSinh>1992</NamSinh>
+    <Toan>8.9</Toan>
+    <Van>7.6</Van>
+    <NN>6.5</NN>
+  </ThiSinh>
+  <ThiSinh>
+    <SBD>SV002</SBD>
+    <HT>Nguyen Thi An</HT>
+    <NamSinh>1990</NamSinh>
+    <Toan>9.2</Toan>
+    <Van>7.6</Van>
+    <NN>6.9</NN>
+  </ThiSinh>
+  <ThiSinh>
+    <SBD>SV003</SBD>
+    <HT>Pham Thi Hong</HT>
+    <NamSinh>2003</NamSinh>
+    <Toan>4.4</Toan>
+    <Van>5.3</Van>
+    <NN>2.3</NN>
+  </ThiSinh>
+  <ThiSinh>
+    <SBD>SV004</SBD>
+    <HT>Le Chi Bao</HT>
+    <NamSinh>2002</NamSinh>
+    <Toan>1.2</Toan>
+    <Van>3.6</Van>
+    <NN>6.2</NN>
+  </ThiSinh>
+  <ThiSinh>
+    <SBD>SV005</SBD>
+    <HT>Ho Thanh Hai</HT>
+    <NamSinh>2001</NamSinh>
+    <Toan>6.9</Toan>
+    <Van>4.6</Van>
+    <NN>6.3</NN>
+  </ThiSinh>
+  <ThiSinh>
+    <SBD>SV006</SBD>
+    <HT>Nguyen Van Quan</HT>
+    <NamSinh>2002</NamSinh>
+    <Toan>9.5</Toan>
+    <Van>9.7</Van>
+    <NN>8.8</NN>
+  </ThiSinh>
+  <ThiSinh>
+    <SBD>SV007</SBD>
+    <HT>Bui Ngoc Linh</HT>
+    <NamSinh>1995</NamSinh>
+    <Toan>5.9</Toan>
+    <Van>9.6</Van>
+    <NN>7.5</NN>
+  </ThiSinh>
+  <ThiSinh>
+    <SBD>SV008</SBD>
+    <HT>Le Van An</HT>
+    <NamSinh>2004</NamSinh>
+    <Toan>9.9</Toan>
+    <Van>7.9</Van>
+    <NN>6.7</NN>
+  </ThiSinh>
+  <ThiSinh>
+    <SBD>SV009</SBD>
+    <HT>Pham Ngoc Han</HT>
+    <NamSinh>1992</NamSinh>
+    <Toan>7.3</Toan>
+    <Van>7.1</Van>
+    <NN>6.7</NN>
+  </ThiSinh>
+  <ThiSinh>
+    <SBD>SV0010</SBD>
+    <HT>Ho Thi Hoa</HT>
+    <NamSinh>2003</NamSinh>
+    <Toan>6.9</Toan>
+    <Van>8.6</Van>
+    <NN>7.6</NN>
+  </ThiSinh>
+</DSSV>
