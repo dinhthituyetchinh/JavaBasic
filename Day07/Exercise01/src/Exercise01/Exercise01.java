@@ -15,6 +15,12 @@ public class Exercise01 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        DSBatDongSan dt = new DSBatDongSan();
+        
+        dt.docFile("DSBDS.xml");
+        dt.xuatDSBDS();
+        System.out.printf("Tổng giá trị các bất động sản: %.2f\n", dt.tinhTongGiaTri());
+        System.out.printf("Phí kinh doanh của các bds: %.2f\n", dt.tongPhiKD());
     }
     
 }
