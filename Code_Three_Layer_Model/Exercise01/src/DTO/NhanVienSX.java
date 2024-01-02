@@ -12,16 +12,19 @@ public class NhanVienSX extends NhanVienVinCom
 {
    private static double _HeSoPhuCapNangNhoc = 0.1;
    private int _SoNgayNghi;
-
-    public NhanVienSX(double _HeSoLuong) {
-        super(_HeSoLuong);
-    }
-
     public int getSoNgayNghi() {
         return _SoNgayNghi;
     }
 
     public void setSoNgayNghi(int _SoNgayNghi) {
+        this._SoNgayNghi = _SoNgayNghi;
+    }
+    public NhanVienSX(double _HeSoLuong) {
+        super(_HeSoLuong);
+    }
+
+    public NhanVienSX(int _SoNgayNghi) {
+        super();
         this._SoNgayNghi = _SoNgayNghi;
     }
    @Override

@@ -52,4 +52,10 @@ public abstract class NhanVienVinCom extends NhanVien
             return 0 * luong() + phuCapTN();
        }
     }
+    @Override
+    public void Xuat() {
+        super.Xuat();
+        System.out.println("HSL: " + getHeSoLuong());
+    }
+
 }
