@@ -4,6 +4,8 @@
  */
 package DTO;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author Tuyet Chinh
@@ -32,6 +34,14 @@ public class CanBoQuanLy extends NhanVienVinCom
     public CanBoQuanLy() {
         super();
     }
+
+    public CanBoQuanLy(String chucVu, double hsCV, String _MaSo, String _HoTen, String _GioiTinh, String _DiaChi, String _SoDienThoai, LocalDateTime _NgaySinh, LocalDateTime _ThoiGianVaoLam, LocalDateTime _ThoiGianTroThanhNVCT, double _HeSoLuong) {
+        super(_MaSo, _HoTen, _GioiTinh, _DiaChi, _SoDienThoai, _NgaySinh, _ThoiGianVaoLam, _ThoiGianTroThanhNVCT, _HeSoLuong);
+        this.chucVu = chucVu;
+        this.hsCV = hsCV;
+    }
+    
+    
     @Override
     public char XepLoai() {
         return 'A';
@@ -52,5 +62,4 @@ public class CanBoQuanLy extends NhanVienVinCom
         System.out.println("Chức vụ: " + chucVu);
         System.out.println("Hệ số chức vụ: " + hsCV);
     }
-
 }

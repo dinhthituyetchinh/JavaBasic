@@ -90,16 +90,16 @@ public class NhanVien
         this._Email = common.formatEmail(this._HoTen);
     }
 
-    public void setNgaySinh(LocalDateTime _NgaySinh) {
-        this._NgaySinh = _NgaySinh;
+    public void setNgaySinh(LocalDateTime _NgaySinh) {      
+        this._NgaySinh = _NgaySinh;      
     }
 
     public void setThoiGianVaoLam(LocalDateTime _ThoiGianVaoLam)
     {
-        if(_ThoiGianVaoLam.getYear() - Year.now().getValue() > 18)
+        if( Year.now().getValue() - _NgaySinh.getYear() > 18)
         this._ThoiGianVaoLam = _ThoiGianVaoLam;
         else
-            System.out.println("Tuổi phải lớn hơn 18");
+            System.out.println("Không nhận");
     }
 
     public void setThoiGianTroThanhNVCT(LocalDateTime _ThoiGianTroThanhNVCT) {
@@ -199,4 +199,5 @@ public class NhanVien
         
         return 0;
     }
+
 }

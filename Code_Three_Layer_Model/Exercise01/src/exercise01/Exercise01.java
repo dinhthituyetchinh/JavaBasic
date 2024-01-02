@@ -4,6 +4,7 @@
  */
 package exercise01;
 
+import BLL.BLL_DSNhanVien;
 import BLL.Common;
 
 /**
@@ -17,7 +18,8 @@ public class Exercise01 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
+        BLL_DSNhanVien dt = new BLL_DSNhanVien();
+        dt.loadDS();
     }
     
 }

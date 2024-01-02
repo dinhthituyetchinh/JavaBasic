@@ -4,11 +4,13 @@
  */
 package DTO;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author Tuyet Chinh
  */
-public abstract class NhanVienVinCom extends NhanVien
+public abstract class NhanVienVinCom extends NhanVien implements I_DanhGia
 {
     private double _HeSoLuong;
     public static double _LuongCoBan = 1400000;
@@ -25,9 +27,9 @@ public abstract class NhanVienVinCom extends NhanVien
         super();
     }
     
-    public NhanVienVinCom(double _HeSoLuong) 
+    public NhanVienVinCom(String _MaSo, String _HoTen, String _GioiTinh, String _DiaChi, String _SoDienThoai, LocalDateTime _NgaySinh, LocalDateTime _ThoiGianVaoLam, LocalDateTime _ThoiGianTroThanhNVCT, double _HeSoLuong) 
     {
-        super();
+        super(_MaSo, _HoTen, _GioiTinh, _DiaChi, _SoDienThoai, _NgaySinh, _ThoiGianVaoLam, _ThoiGianTroThanhNVCT);
         this._HeSoLuong = _HeSoLuong;
     }
     
@@ -57,5 +59,15 @@ public abstract class NhanVienVinCom extends NhanVien
         super.Xuat();
         System.out.println("HSL: " + getHeSoLuong());
     }
-
+    
+    @Override
+    public String danhGia()
+        {
+            if (XepLoai() == 'A')
+                return "Năng lực tốt";
+            else if (XepLoai() == 'B')
+                return "Có năng lực";
+            else
+                return " ";
+        }
 }

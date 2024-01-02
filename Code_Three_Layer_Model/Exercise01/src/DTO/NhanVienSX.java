@@ -4,6 +4,8 @@
  */
 package DTO;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author Tuyet Chinh
@@ -19,14 +21,16 @@ public class NhanVienSX extends NhanVienVinCom
     public void setSoNgayNghi(int _SoNgayNghi) {
         this._SoNgayNghi = _SoNgayNghi;
     }
-    public NhanVienSX(double _HeSoLuong) {
-        super(_HeSoLuong);
-    }
 
-    public NhanVienSX(int _SoNgayNghi) {
+    public NhanVienSX() {
         super();
+    }   
+
+    public NhanVienSX(int _SoNgayNghi, String _MaSo, String _HoTen, String _GioiTinh, String _DiaChi, String _SoDienThoai, LocalDateTime _NgaySinh, LocalDateTime _ThoiGianVaoLam, LocalDateTime _ThoiGianTroThanhNVCT, double _HeSoLuong) {
+        super(_MaSo, _HoTen, _GioiTinh, _DiaChi, _SoDienThoai, _NgaySinh, _ThoiGianVaoLam, _ThoiGianTroThanhNVCT, _HeSoLuong);
         this._SoNgayNghi = _SoNgayNghi;
     }
+    
    @Override
    public char XepLoai()
    {
@@ -54,4 +58,11 @@ public class NhanVienSX extends NhanVienVinCom
    {
        return getHeSoLuong() * NhanVienVinCom._LuongCoBan * (1 + NhanVienSX._HeSoPhuCapNangNhoc);
    }
+   
+   @Override
+    public void Xuat() {
+        super.Xuat();
+        System.out.println("Số ngày nghỉ: " + getSoNgayNghi());
+    }
+
 }
