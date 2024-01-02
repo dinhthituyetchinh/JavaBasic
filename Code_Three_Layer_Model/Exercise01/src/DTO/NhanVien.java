@@ -5,8 +5,12 @@
 package DTO;
 
 import BLL.Common;
+import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.Year;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Scanner;
 
 /**
@@ -141,6 +145,58 @@ public class NhanVien
         _Email = scanner.next();
     }
     
+    public void Xuat()
+    {
+        System.out.println("Mã số: " + _MaSo);
+        System.out.println("Họ tên: " + _HoTen);
+        System.out.println("Ngày sinh: " + _NgaySinh);
+        System.out.println("Giới tính: " + _GioiTinh);
+        System.out.println("Địa chỉ: " + _DiaChi);
+        System.out.println("Số điện thoại: " + _SoDienThoai);
+        System.out.println("Thời gian vào làm: " + _ThoiGianVaoLam);
+        System.out.println("Thời gian trở thành nhân viên chính thức: " + _ThoiGianTroThanhNVCT);
+        System.out.println("Email: " + _Email); 
+    }
     
+    public double thamNien()
+    {
+
+        ZonedDateTime now = ZonedDateTime.now();
+        ZonedDateTime oldDate = ZonedDateTime.of(_ThoiGianVaoLam, ZoneId.systemDefault());
+        
+        Duration duration = Duration.between(oldDate, now);
+        
+        return duration.toDays();
+        //return (LocalDateTime.now().getMonth().getValue() - _ThoiGianVaoLam.getMonth().getValue())/ 12;
+    }
     
+    public double phuCapTN()
+    {
+        if(thamNien() <= 3)
+        {
+            return 1000000;
+        }
+        else if(thamNien() <= 6)
+        {
+            return 2000000;
+        }
+        else if(thamNien() <= 10)
+        {
+            return 2000000;
+        }
+        else
+        {
+            return 5000000;
+        }
+    }
+    
+    private double tienTangThamNien()
+    {
+        if (Math.ceil(thamNien())  > 11)
+        {
+            return (Math.ceil(thamNien()) - 11) * 500000;
+        }
+        
+        return 0;
+    }
 }

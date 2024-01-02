@@ -13,7 +13,7 @@ public class Common
     public String formatEmail(String _FullName)
     {
         //Nguyễn Văn An
-        String[] arr = _FullName.split(" ");
+        String[] arr = _FullName.split(" "); 
         int lastIndex = arr.length - 1;
         String result = arr[lastIndex];
         for(int i = 0; i < lastIndex; i ++)
