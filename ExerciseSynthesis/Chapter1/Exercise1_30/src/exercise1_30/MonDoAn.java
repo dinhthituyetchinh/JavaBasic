@@ -45,6 +45,15 @@ public class MonDoAn extends MonHoc
     {
         return 2000000;
     }
+    @Override 
+    public void nhap()
+    {
+        super.nhap();   
+        System.out.println("Nhập điểm của GVHD: ");
+        diemGVHD = scanner.nextDouble();
+        System.out.println("Nhập điểm của GVPB: ");
+        diemGVPB = scanner.nextDouble();
+    }
      @Override
     public void xuat()
     {

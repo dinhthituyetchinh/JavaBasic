@@ -17,7 +17,6 @@ public class Exercise1_22 {
         // TODO code application logic here
         MangMotChieu dt = new MangMotChieu();
         dt.mainArr();
-
     }
     
 }

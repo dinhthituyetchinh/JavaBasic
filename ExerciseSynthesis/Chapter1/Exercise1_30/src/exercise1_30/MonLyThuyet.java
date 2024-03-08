@@ -35,7 +35,11 @@ public class MonLyThuyet extends MonHoc
     public void setDiemCK(double diemCK) {
         this.diemCK = diemCK;
     }
-        
+    
+    public MonLyThuyet(String maMH, String tenMH, int soTC) {
+        super(maMH, tenMH, soTC);
+    }
+   
         public MonLyThuyet(String maMH, String tenMH, int soTC, double diemTL, double diemGK, double diemCK) 
         {
             super(maMH, tenMH, soTC);
@@ -55,6 +59,18 @@ public class MonLyThuyet extends MonHoc
         {
             return 250000 * getSoTC();
         }
+        @Override
+        public void nhap()
+        {
+            super.nhap();
+            System.out.println("Nhập điểm tiểu luận: ");
+            diemTL = scanner.nextDouble();
+            System.out.println("Nhập điểm giữa kì: ");
+            diemGK = scanner.nextDouble();
+            System.out.println("Nhập điểm cuối kì: ");
+            diemCK = scanner.nextDouble();
+        }
+        
         @Override
         public void xuat()
         {

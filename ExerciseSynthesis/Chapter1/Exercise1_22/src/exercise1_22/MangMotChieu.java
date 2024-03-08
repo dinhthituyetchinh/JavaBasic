@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class MangMotChieu
 {
     private int c;
-    private static final int MAX_SIZE = 100;
+    private static final int MAX_SIZE = 500;
     private static final Scanner scanner = new Scanner(System.in);
     int n = 0;
     int[] a = new int[MAX_SIZE];
@@ -51,7 +51,7 @@ public class MangMotChieu
                             default -> System.out.format("Ban nhap sai, hay chon 1 hoac 2 de thuc hien chuong trinh.\nVui long nha Enter de tiep tuc.\n");
                         }
                     } while (x != 1 && x != 2);
-                    scanner.nextLine();
+                    
                 }
                 case 2 -> {
 //                    if (n != 0)
@@ -276,6 +276,43 @@ public class MangMotChieu
         }
     }
     //Bai 4
+   public void lietKeCacPhanTuOViTriAm(int[] a, int n)
+    {
+            for (int i = 0; i < n; i++)
+            {
+                    if (a[i] % 2 < 0)
+                    {
+                        System.out.print(a[i] + "\t");
+                    }
+            }
+    }
+    //Bai 5
+    public boolean checkSNT(int x)
+    {
+        if(x < 2)
+        {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(x); i++) {
+        if (x % i == 0) {
+            return false;
+        }
+    }
+    return true;
+    }
+    
+    public void lietKeCacSNT(int[] a, int n)
+    {
+            for (int i = 0; i < n; i++)
+            {
+                    if (checkSNT(a[i]) == true)
+                    {
+                        System.out.print(a[i] + "\t");
+                    }
+            }
+    }
+    //Bai 6
+    
     
     //Bai 13
     public int elementMin(int a[], int n)

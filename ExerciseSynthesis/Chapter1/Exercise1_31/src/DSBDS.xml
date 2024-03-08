@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+<BDSs>
+	<BDS>
+		<Loai>DatTrong</Loai>
+		<Ma>A001</Ma>
+		<Dai>8.7</Dai>
+		<Rong>6.7</Rong>
+	</BDS>
+	<BDS>
+		<Loai>DatTrong</Loai>
+		<Ma>A002</Ma>
+		<Dai>5.7</Dai>
+		<Rong>6.7</Rong>
+	</BDS>
+	<BDS>
+		<Loai>NhaO</Loai>
+		<Ma>A003</Ma>
+		<Dai>8.7</Dai>
+		<Rong>6.7</Rong>
+		<SoLau>2</SoLau>
+	</BDS>
+	<BDS>
+		<Loai>NhaO</Loai>
+		<Ma>A004</Ma>
+		<Dai>8.7</Dai>
+		<Rong>6.7</Rong>
+		<SoLau>5</SoLau>
+	</BDS>
+	<BDS>
+		<Loai>BietThu</Loai>
+		<Ma>A005</Ma>
+		<Dai>9</Dai>
+		<Rong>9</Rong>
+	</BDS>
+	<BDS>
+		<Loai>KhachSan</Loai>
+		<Ma>A006</Ma>
+		<Dai>8.7</Dai>
+		<Rong>6.7</Rong>
+		<SoSao>4</SoSao>
+	</BDS>
+	<BDS>
+		<Loai>DatTrong</Loai>
+		<Ma>A007</Ma>
+		<Dai>20.7</Dai>
+		<Rong>11.7</Rong>
+	</BDS>
+	<BDS>
+		<Loai>KhachSan</Loai>
+		<Ma>A008</Ma>
+		<Dai>15</Dai>
+		<Rong>6</Rong>
+		<SoSao>5</SoSao>
+	</BDS>
+	<BDS>
+		<Loai>DatTrong</Loai>
+		<Ma>A009</Ma>
+		<Dai>8.7</Dai>
+		<Rong>6.7</Rong>
+	</BDS>
+	<BDS>
+		<Loai>BietThu</Loai>
+		<Ma>A010</Ma>
+		<Dai>12.5</Dai>
+		<Rong>6</Rong>
+	</BDS>
+	<BDS>
+		<Loai>DatTrong</Loai>
+		<Ma>A011</Ma>
+		<Dai>8.7</Dai>
+		<Rong>6.7</Rong>
+
+	</BDS>
+	<BDS>
+		<Loai>KhachSan</Loai>
+		<Ma>A012</Ma>
+		<Dai>8.7</Dai>
+		<Rong>6.7</Rong>
+		<SoSao>5</SoSao>
+	</BDS>
+</BDSs>
+

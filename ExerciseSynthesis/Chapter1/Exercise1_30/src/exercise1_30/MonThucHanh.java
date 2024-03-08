@@ -63,6 +63,20 @@ public class MonThucHanh extends MonHoc
             return 350000 * getSoTC() + MonThucHanh.tienCSVC;
         }
         @Override
+        public void nhap()
+        {
+         super.nhap();
+            System.out.println("Điểm kiểm tra lần 1: ");
+            kt1 = scanner.nextDouble();
+            System.out.println("Điểm kiểm tra lần 2: ");
+            kt2 = scanner.nextDouble();
+            System.out.println("Điểm kiểm tra lần 3: ");
+            kt3 = scanner.nextDouble();
+            System.out.println("Điểm kiểm tra lần 3: ");
+            kt4 = scanner.nextDouble();
+        }
+        
+        @Override
         public void xuat()
         {
             super.xuat();

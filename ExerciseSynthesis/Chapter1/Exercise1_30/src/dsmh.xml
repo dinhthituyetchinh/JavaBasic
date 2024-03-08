@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+<Monhocs>
+	<MH>
+		<Loai>DiemLT</Loai>
+		<Ma>010001238</Ma>
+		<Ten>Mạng máy tính</Ten>
+		<SoTc>3</SoTc>
+		<DiemTL>8.7</DiemTL>
+		<DiemGK>6.7</DiemGK>
+		<DiemCK>7.1</DiemCK>
+	</MH>
+	<MH>
+		<Loai>DiemDA</Loai>
+		<Ma>010001235</Ma>
+		<Ten>Cơ sở dữ liệu</Ten>
+		<SoTc>4</SoTc>
+		<DiemGVHD>8.5</DiemGVHD>
+		<DiemGVPB>8</DiemGVPB>
+	</MH>
+	<MH>
+		<Loai>DiemTH</Loai>
+		<Ma>01100598</Ma>
+		<Ten>Mạng máy tính</Ten>
+		<SoTc>1</SoTc>
+		<DiemKT1>6.7</DiemKT1>
+		<DiemKT2>10</DiemKT2>
+		<DiemKT3>8.9</DiemKT3>
+		<DiemKT4>5</DiemKT4>
+	</MH>
+	<MH>
+		<Loai>DiemTH</Loai>
+		<Ma>011007836</Ma>
+		<Ten>Hướng đối tượng</Ten>
+		<SoTc>1</SoTc>
+		<DiemKT1>10</DiemKT1>
+		<DiemKT2>9.1</DiemKT2>
+		<DiemKT3>4</DiemKT3>
+		<DiemKT4>8</DiemKT4>
+	</MH>
+	<MH>
+		<Loai>DiemLT</Loai>
+		<Ma>010001673</Ma>
+		<Ten>Mã hoá ứng dụng</Ten>
+		<SoTc>3</SoTc>
+		<DiemTL>6.5</DiemTL>
+		<DiemGK>7</DiemGK>
+		<DiemCK>8.8</DiemCK>
+	</MH>
+	<MH>
+		<Loai>DiemDA</Loai>
+		<Ma>0100047289</Ma>
+		<Ten>Thiết Kế Web</Ten>
+		<SoTc>5</SoTc>
+		<DiemGVHD>7.6</DiemGVHD>
+		<DiemGVPB>7.9</DiemGVPB>
+	</MH>
+</Monhocs>
+

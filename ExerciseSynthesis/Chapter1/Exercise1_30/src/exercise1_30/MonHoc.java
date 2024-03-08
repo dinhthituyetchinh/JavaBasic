@@ -38,7 +38,10 @@ public abstract class MonHoc
     public void setSoTC(int soTC) {
         this.soTC = soTC;
     }
-    Scanner scanner = new Scanner(System.in);
+    public Scanner scanner = new Scanner(System.in);
+
+    public MonHoc() {
+    }
     
     public MonHoc(String maMH, String tenMH, int soTC)
     {
@@ -48,7 +51,16 @@ public abstract class MonHoc
     }
     public abstract double diemTB();
     public abstract double hocPhi();
-     public void xuat()
+    public void nhap()
+    {
+        System.out.print("Nhập mã môn học: ");
+        maMH = scanner.next();
+        System.out.print("Nhập tên môn học: ");
+        tenMH = scanner.next();
+        System.out.print("Nhập số tín chỉ: ");
+        soTC = scanner.nextInt();
+    }
+    public void xuat()
      {
         System.out.println("Mã MH: "+getMaMH());
         System.out.println("Tên MH: "+getTenMH());
