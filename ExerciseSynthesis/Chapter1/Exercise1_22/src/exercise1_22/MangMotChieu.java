@@ -19,34 +19,33 @@ public class MangMotChieu
     int n = 0;
     int[] a = new int[MAX_SIZE];
    // Scanner scanner = new Scanner(System.in);
-    public void mainArr()
+    public void mainArr() 
     {
         do
         {
-
                 MENU();
-                System.out.format("Moi ban nhap lua chon: ");
+                System.out.format("\nMoi ban nhap lua chon: ");
                 c = scanner.nextInt();
                 switch (c)
                 {
                 case 1 -> {
                     int x;
                     System.out.format(" 1. Khoi tao mang mot chieu.\n");
+                    
                     do
                     {
-                        menuCau1();
+                       menuCau1(); 
                         System.out.format("Moi ban lua chon cach tao mang mot chieu: ");
                          x = scanner.nextInt();
                         switch (x)
                         {
                             case 1 -> {
-                                nhapMang(a, n);
-                                System.out.format("Tao mang thanh cong.\nVui long nha Enter de tiep tuc.\n");
+                                nhapMang();
+                                System.out.format("Tao mang thanh cong.\n");
                             }
                             case 2 -> {
-                                taoMangNgauNhien(a, n);
-                                xuatMang(a, n);
-                                System.out.format("Tao mang thanh cong.\nVui long nha Enter de tiep tuc.\n");
+                                taoMangNgauNhien();
+                                System.out.format("Tao mang thanh cong.\n");
                             }
                             default -> System.out.format("Ban nhap sai, hay chon 1 hoac 2 de thuc hien chuong trinh.\nVui long nha Enter de tiep tuc.\n");
                         }
@@ -57,7 +56,7 @@ public class MangMotChieu
 //                    if (n != 0)
 //                    {
                         System.out.format(" 2. Xuat mot mang mot chieu chua n so nguyen.\n");
-                        xuatMang(a, n);
+                        xuatMang();
 //                    }
 //                    else
 //                    {
@@ -211,7 +210,7 @@ public class MangMotChieu
 
     private void MENU()
     {
-        System.out.format("================================ = MENU = =================================\n");
+        System.out.format("\n================================ = MENU = =================================\n");
         System.out.format("\t\tHay chon chuong trinh ma ban can thuc hien:\n");
         System.out.format(" 1. Tao mot mang mot chieu chua n so nguyen.\n");
         System.out.format(" 2. Xuat mot mang mot chieu chua n so nguyen.\n");
@@ -236,7 +235,7 @@ public class MangMotChieu
     }
     
     //Bai 1
-    public void nhapMang(int[] a, int n)
+    public void nhapMang()
     {
         do {
             System.out.format("Moi ban nhap vao so phan tu cua mang: ");
@@ -252,7 +251,7 @@ public class MangMotChieu
         }
     }
     //Bai 2
-    public void taoMangNgauNhien(int[] a, int n) {
+    public void taoMangNgauNhien() {
         do {
             System.out.format("Moi ban nhap vao so phan tu cua mang: ");
             n = scanner.nextInt();
@@ -267,16 +266,16 @@ public class MangMotChieu
         }
     }
     //Bai 3
-    public void xuatMang(int[] a, int n)
+    public void xuatMang()
     {
-        System.out.println("Noi dung cua mang la: ");
+        System.out.println("Noi dung cua mang la: "+n);
         for (int i = 0; i < n; i++)
         {
             System.out.print(a[i] + "\t");
         }
     }
     //Bai 4
-   public void lietKeCacPhanTuOViTriAm(int[] a, int n)
+   public void lietKeCacPhanTuOViTriAm()
     {
             for (int i = 0; i < n; i++)
             {

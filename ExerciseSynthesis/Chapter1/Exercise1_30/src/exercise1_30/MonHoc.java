@@ -12,8 +12,8 @@ import java.util.Scanner;
  */
 public abstract class MonHoc 
 {
-    private String maMH,tenMH; 
-    private int soTC;
+    protected String maMH,tenMH; 
+    protected int soTC;
 
     public String getMaMH() {
         return maMH;
