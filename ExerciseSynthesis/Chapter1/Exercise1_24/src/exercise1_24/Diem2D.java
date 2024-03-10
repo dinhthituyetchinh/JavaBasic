@@ -67,7 +67,8 @@ public class Diem2D {
     
     public void toaDoDoiXung(Diem2D diem)
     {
-        diem.x = -x;
-        diem.y = -y;     
+        x = - diem.x;
+        y = - diem.y;
+        
     }
 }
