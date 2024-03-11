@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+<QuanLyDanhBa>
+    <DanhBa>
+        <Ten>Công Anh</Ten>
+        <Phone>0389420125</Phone>
+    </DanhBa>
+    <DanhBa>
+        <Ten>Ngọc Bích</Ten>
+        <Phone>0256389201</Phone>
+    </DanhBa>
+    <DanhBa>
+        <Ten>Anh Đào</Ten>
+        <Phone>0267483920</Phone>
+    </DanhBa>
+    <DanhBa>
+        <Ten>Đoan Trang</Ten>
+        <Phone>0398126036</Phone>
+    </DanhBa>
+    <DanhBa>
+        <Ten>Ngọc Trí</Ten>
+        <Phone>0305738291</Phone>
+    </DanhBa>
+    <DanhBa>
+        <Ten>Anh Vũ</Ten>
+        <Phone>0548728499</Phone>
+    </DanhBa>
+</QuanLyDanhBa>
+
