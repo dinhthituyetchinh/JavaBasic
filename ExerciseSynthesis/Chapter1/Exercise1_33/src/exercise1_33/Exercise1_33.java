@@ -15,6 +15,9 @@ public class Exercise1_33 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        DanhSachKhachHang dt = new DanhSachKhachHang();
+        dt.docFileTXT("DanhSachKH.txt");
+        dt.xuatDS();
     }
     
 }

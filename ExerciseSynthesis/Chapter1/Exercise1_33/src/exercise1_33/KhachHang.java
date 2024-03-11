@@ -45,4 +45,20 @@ public class KhachHang {
         this.namSinh = namSinh;
     }
     
+    public void nhapKH()
+    {
+        System.out.println("Nhập mã số: ");
+        maSo = Scan.scanner.next();
+        System.out.println("Nhập họ tên: ");
+        hoTen = Scan.scanner.next();
+        System.out.println("Nhập năm sinh: ");
+        namSinh = Scan.scanner.nextInt();
+    }
+    
+    public void xuatKH()
+    {
+        System.out.println("Mã số: "+ getMaSo());
+        System.out.println("Họ tên: "+ getHoTen());
+        System.out.println("Năm sinh: "+getNamSinh());
+    }
 }
