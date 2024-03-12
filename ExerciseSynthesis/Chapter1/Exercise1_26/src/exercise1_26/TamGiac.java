@@ -9,69 +9,60 @@ package exercise1_26;
  * @author Tuyet Chinh
  */
 public class TamGiac {
-   private int x, y, z;
+   private int A, B, C;
 
-    public int getX() {
-        return x;
+    public int getA() {
+        return A;
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public void setA(int A) {
+        this.A = A;
     }
 
-    public int getY() {
-        return y;
+    public int getB() {
+        return B;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public void setB(int B) {
+        this.B = B;
     }
 
-    public int getZ() {
-        return z;
+    public int getC() {
+        return C;
     }
 
-    public void setZ(int z) {
-        this.z = z;
+    public void setC(int C) {
+        this.C = C;
     }
 
-    public TamGiac()
-    {
+    public TamGiac() {
     }
+
     
-    public TamGiac(int x, int y, int z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+    public TamGiac(int A, int B, int C) {
+        this.A = A;
+        this.B = B;
+        this.C = C;
     }
     
     public TamGiac(TamGiac tg)
     {
-        this.x = tg.x;
-        this.y = tg.y;
-        this.z = tg.z;
+        this.A = tg.A;
+        this.B = tg.B ;
+        this.C = tg.C;
     }
-   
+    
     public void nhap()
     {
-        System.out.println("Nhập toạ độ điểm x: ");
-        x = Scan.scanner.nextInt();
-        System.out.println("Nhập toạ độ điểm y: ");
-        y = Scan.scanner.nextInt();
-        System.out.println("Nhập toạ độ điểm z: ");
-        z = Scan.scanner.nextInt();
+        System.out.println("Nhập đỉnh thứ nhất: ");
+        A = Scan.scanner.nextInt();
+        System.out.println("Nhập đỉnh thứ hai: ");
+        B = Scan.scanner.nextInt();
+        System.out.println("Nhập đỉnh thứ ba: ");
+        C = Scan.scanner.nextInt();
     }
-    
     public void xuat()
     {
-        System.out.println("Toạ độ điểm x: "+x);
-        System.out.println("Toạ độ điểm y: "+y);
-        System.out.println("Toạ độ điểm z: "+z);
-
+        System.out.println("Ba đỉnh A,");
     }
-    
-//    public double tinhDienTich()
-//    {
-//        return 
-//    }
 }

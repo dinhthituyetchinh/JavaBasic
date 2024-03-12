@@ -22,7 +22,7 @@ public class MangMotChieu
     public void mainArr() 
     {
         do
-        {
+        {           
                 MENU();
                 System.out.format("\nMoi ban nhap lua chon: ");
                 c = scanner.nextInt();

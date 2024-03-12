@@ -15,6 +15,17 @@ public class Exercise1_25 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        PhanSo a = new PhanSo(3, 7);
+        a.hienThiPS();
+        PhanSo b = new PhanSo(4, 9);
+        b.hienThiPS();
+        PhanSo x = new PhanSo();
+        x.nhapPS();
+        x.hienThiPS();
+        PhanSo y = new PhanSo();
+        y.nhapPS();
+        y.hienThiPS();
+        System.out.println("Nghịch đảo của x:");
     }
     
 }
