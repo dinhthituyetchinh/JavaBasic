@@ -25,7 +25,22 @@ public class Exercise1_25 {
         PhanSo y = new PhanSo();
         y.nhapPS();
         y.hienThiPS();
-        System.out.println("Nghịch đảo của x:");
+//        System.out.println("Nghịch đảo của x (làm thay đổi giá trị của x):");
+//        x.nghichDao();
+//        x.hienThiPS();       
+        System.out.println("Tổng của x và y: ");
+        PhanSo ps = new PhanSo();
+        //Cách 1
+//        ps =  ps.congPS(x, y);
+//        ps.hienThiPS();
+        //Cách 2
+        ps = x.congPS(y);
+        ps.hienThiPS();
+        
+        DanhSachPS lst = new DanhSachPS();
+        lst.nhapDSPS();
+        lst.xuatDSPS();
+        System.out.println("Tổng các phân số là: "+ lst.tongDSPS().hienThi());
     }
     
 }

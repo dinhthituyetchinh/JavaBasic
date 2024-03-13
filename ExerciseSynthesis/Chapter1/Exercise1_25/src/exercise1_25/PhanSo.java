@@ -47,14 +47,26 @@ public class PhanSo {
         }
     }
     
-    public void nghichDao()
+    public String hienThi()
+    {
+        if(tuSo == 0 || mauSo == 1)
+        {
+            return tuSo+"";
+        }
+        else
+        {
+           return tuSo+"/"+mauSo;
+        }
+        
+    }
+    public void nghichDao() // làm thay đổi giá trị phân số ban đầu
     {
         int temp = tuSo;
         tuSo = mauSo;
         mauSo = temp;
     }
    
-    public PhanSo giaTriNDPhanSo(PhanSo ps)
+    public PhanSo giaTriNDPhanSo(PhanSo ps)// không làm thay đổi giá trị phân số ban đầu
     {
         int temp = ps.tuSo;
         ps.tuSo = ps.mauSo;
@@ -66,11 +78,40 @@ public class PhanSo {
         return tuSo / mauSo;
     }
     
+    public int gcd(int a, int b)
+        {
+            int tmp;
+            while (b != 0)
+            {
+                tmp = a % b;
+                a = b;
+                b = tmp;
+            }
+            return a;
+        }
+    
+    public PhanSo rutGon(PhanSo x)
+        {
+            int uc = gcd(x.tuSo, x.mauSo);
+            x.tuSo = x.tuSo / uc;
+            x.mauSo = x.mauSo / uc;
+            return x;
+        }
+    public PhanSo congPS(PhanSo ps1, PhanSo ps2)
+    {
+        PhanSo ps3 = new PhanSo();
+        ps3.tuSo = ps1.tuSo * ps2.mauSo + ps2.tuSo * ps1.mauSo;
+        ps3.mauSo = ps1.mauSo * ps2.mauSo;
+        rutGon(ps3);
+        return ps3;
+    }
+    
     public PhanSo congPS(PhanSo b)
     {
         PhanSo a = new PhanSo();
         a.tuSo = ((tuSo * b.mauSo) + (b.tuSo * mauSo));
         a.mauSo = mauSo * b.mauSo;
+        rutGon(a);
         return a;
     }
     
@@ -79,6 +120,7 @@ public class PhanSo {
         PhanSo a = new PhanSo();
         a.tuSo = ((tuSo * b.mauSo) - (b.tuSo * mauSo));
         a.mauSo = mauSo * b.mauSo;
+        rutGon(a);
         return a;
     }
     
@@ -87,6 +129,7 @@ public class PhanSo {
         PhanSo a = new PhanSo();
         a.tuSo = tuSo * b.tuSo;
         a.mauSo = mauSo * b.mauSo;
+        rutGon(a);
         return a;
     }
     
