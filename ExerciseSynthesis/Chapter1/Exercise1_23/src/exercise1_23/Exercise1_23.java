@@ -16,6 +16,7 @@ public class Exercise1_23 {
     public static void main(String[] args) {
         // TODO code application logic here
         MangHaiChieu dt = new MangHaiChieu();
+        dt.mainArr();
     }
     
 }

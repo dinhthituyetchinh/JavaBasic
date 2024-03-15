@@ -5,8 +5,6 @@
 package exercise1_22;
 
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -26,104 +24,111 @@ public class MangMotChieu
     {
         do
         {    
-                MENU();
-                System.out.format("\nMoi ban nhap lua chon: ");
-                c = scanner.nextInt();
-                switch (c)
+            MENU();
+            System.out.format("\nMoi ban nhap lua chon: ");
+            c = scanner.nextInt();
+            switch (c)
+            {
+            case 1 -> {
+                int x;
+                System.out.format(" 1. Khoi tao mang mot chieu.\n");
+
+                do
                 {
-                case 1 -> {
-                    int x;
-                    System.out.format(" 1. Khoi tao mang mot chieu.\n");
-                    
-                    do
+                   menuCau1(); 
+                    System.out.format("Moi ban lua chon cach tao mang mot chieu: ");
+                     x = scanner.nextInt();
+                    switch (x)
                     {
-                       menuCau1(); 
-                        System.out.format("Moi ban lua chon cach tao mang mot chieu: ");
-                         x = scanner.nextInt();
-                        switch (x)
-                        {
-                            case 1 -> {
-                                nhapMang();
-                                System.out.format("Tao mang thanh cong.\n");
-                            }
-                            case 2 -> {
-                                taoMangNgauNhien();
-                                System.out.format("Tao mang thanh cong.\n");
-                            }
-                            default -> System.out.format("Ban nhap sai, hay chon 1 hoac 2 de thuc hien chuong trinh.\nVui long nha Enter de tiep tuc.\n");
+                        case 1 -> {
+                            nhapMang();
+                            System.out.format("Tao mang thanh cong.\n");
                         }
-                    } while (x != 1 && x != 2);
-                    
-                }
-                case 2 -> {
-                    if (n != 0)
-                    {
-                        System.out.format(" 2. Xuat mot mang mot chieu chua n so nguyen.\n");
-                        xuatMang();
+                        case 2 -> {
+                            taoMangNgauNhien();
+                            System.out.format("Tao mang thanh cong.\n");
+                        }
+                        default -> System.out.format("Ban nhap sai, hay chon 1 hoac 2 de thuc hien chuong trinh.\nVui long nha Enter de tiep tuc.\n");
                     }
-                    else
-                    {
-                        System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
-                        System.out.format("Hay nhan Enter de tiep tuc.\n");
-                    }
-                }
-                case 3 -> {
-                    if (n != 0)
-                    {
-                        System.out.format(" 3. Liệt kê các giá trị âm có trong mảng.\n");
-                        xuatMang();
-                        System.out.format("\nCác phần tử có giá trị âm trong mảng:\n");
-                        lietKeCacGiaTriAm();
-                        System.out.format("\n");
-                    }
-                    else
-                    {
-                        System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
-                        System.out.format("Hay nhan Enter de tiep tuc.\n");
-                    }
-                }
-                case 4 -> {
-                    if (n != 0)
-                    {
-                        System.out.format(" 4. Liệt kê các số nguyên tố có trong mảng.\n");
-                        xuatMang();
-                        System.out.format("\nCác số nguyên tố trong mảng:\n");
-                        lietKeCacSNT();
-                    }
-                    else
-                    {
-                        System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
-                        System.out.format("Hay nhan Enter de tiep tuc.\n");
-                    }
-                }
-                case 5 -> {
-                    if (n != 0)
-                    {
-                        System.out.format(" 5. Liệt kê các phần tử có giá trị nằm trong đoạn [a, b] cho trước.\n");
-                        xuatMang();
-                    }
-                    else
-                    {
-                        System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
-                        System.out.format("Hay nhan Enter de tiep tuc.\n");
-                    }
-                }
-                case 6 -> {
-                    if (n != 0)
-                    {
-                    
-                        
-                    }
-                    else
-                    {
-                        System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
-                        System.out.format("Hay nhan Enter de tiep tuc.\n");
-                    }
-                }
-                case 7 -> {
+                } while (x != 1 && x != 2);
+
+            }
+            case 2 -> {
                 if (n != 0)
                 {
-
+                    System.out.format(" 2. Xuat mot mang mot chieu chua n so nguyen.\n");
+                    xuatMang();
+                }
+                else
+                {
+                    System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
+                    System.out.format("Hay nhan Enter de tiep tuc.\n");
+                }
+            }
+            case 3 -> {
+                if (n != 0)
+                {
+                    System.out.format(" 3. Liệt kê các giá trị âm có trong mảng.\n");
+                    xuatMang();
+                    System.out.format("\nCác phần tử có giá trị âm trong mảng:\n");
+                    lietKeCacGiaTriAm();
+                    System.out.format("\n");
+                }
+                else
+                {
+                    System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
+                    System.out.format("Hay nhan Enter de tiep tuc.\n");
+                }
+            }
+            case 4 -> {
+                if (n != 0)
+                {
+                    System.out.format(" 4. Liệt kê các số nguyên tố có trong mảng.\n");
+                    xuatMang();
+                    System.out.format("\nCác số nguyên tố trong mảng:\n");
+                    lietKeCacSNT();
+                }
+                else
+                {
+                    System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
+                    System.out.format("Hay nhan Enter de tiep tuc.\n");
+                }
+            }
+            case 5 -> {
+                if (n != 0)
+                {
+                    System.out.format(" 5. Liệt kê các phần tử có giá trị nằm trong đoạn [a, b] cho trước.\n");
+                    xuatMang();
+                    int doanDau, doanCuoi;
+                    System.out.println("Nhập đoạn bắt đầu: ");
+                    doanDau = scanner.nextInt();
+                    do
+                    {
+                        System.out.println("Nhập đoạn kết thúc: ");
+                        doanCuoi = scanner.nextInt();
+                        if(doanCuoi < doanDau)
+                        {
+                            System.out.println("Đoạn kết thúc phải lớn hơn đoạn bắt đầu");
+                        }
+                    }
+                    while(doanCuoi < doanDau);
+                    System.out.println("Các phần tử nằm trong đoạn ["+doanDau+", "+doanCuoi + "]:");
+                    lietKeCacPTTrongDoanAB(doanDau, doanCuoi);
+                }
+                else
+                {
+                    System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
+                    System.out.format("Hay nhan Enter de tiep tuc.\n");
+                }
+            }
+            case 6 -> {
+                if (n != 0)
+                {
+                    System.out.format(" 6. Tính tổng giá trị các phần tử là số nguyên tố.\n");
+                    xuatMang();
+                    System.out.format("\nCác số nguyên tố trong mảng:\n");
+                    lietKeCacSNT();
+                    System.out.format("\nTổng giá trị các phần tử là số nguyên tố: "+tinhTongCacSNT());
 
                 }
                 else
@@ -131,83 +136,153 @@ public class MangMotChieu
                     System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
                     System.out.format("Hay nhan Enter de tiep tuc.\n");
                 }
+            }
+            case 7 -> {
+                if (n != 0)
+                {
+                    System.out.format(" 7. Tính trung bình cộng của các phần tử dương có trong mảng.\n");
+                    xuatMang();
+                    System.out.format("Trung bình cộng của các phần tử dương: "+tinhTBCCacPTDuong());
+
                 }
-                case 8 -> {
-                    if (n != 0)
+                else
+                {
+                    System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
+                    System.out.format("Hay nhan Enter de tiep tuc.\n");
+                }
+            }
+            case 8 -> {
+                if (n != 0)
+                {
+                    System.out.format(" 8. Đếm số phần tử có giá trị lớn hơn x cho trước.\n");
+                    xuatMang();
+                    int x;
+                    System.out.println("Nhập vào giá trị x: ");
+                    x = scanner.nextInt();
+                    System.out.format(" Số phần tử có giá trị lớn hơn "+x+": "+demPTCoGiaTriLonHonX(x));
+
+                }
+                else
+                {
+                    System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
+                    System.out.format("Hay nhan Enter de tiep tuc.\n");
+                }
+            }
+            case 9 -> {
+                if (n != 0)
+                {
+                    System.out.format(" 9. Đếm số phần tử có giá trị là số nguyên tố trong mảng.\n");
+                    xuatMang();
+                    System.out.format("\nCác số nguyên tố trong mảng:\n");
+                    lietKeCacSNT();
+                    System.out.print("\nSố phần tử có giá trị là số nguyên tố: "+ demPTLaSNT());
+                }
+                else
+                {
+                    System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
+                    System.out.format("Hay nhan Enter de tiep tuc.\n");
+                }
+            }
+            case 10 -> {
+                if (n != 0)
+                {
+                    System.out.format("10. Kiểm tra mảng có phải là mảng chứa toàn số nguyên tố.\n");
+                    xuatMang();
+                    if(checkMangToanSNT() == true)
                     {
-                        
+                        System.out.println("Mảng chứa toàn số nguyên tố");
                     }
                     else
                     {
-                        System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
-                        System.out.format("Hay nhan Enter de tiep tuc.\n");
+                        System.out.println("Mảng trên không chứa toàn số nguyên tố");
                     }
                 }
-                case 9 -> {
-                    if (n != 0)
+                else
+                {
+                    System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
+                    System.out.format("Hay nhan Enter de tiep tuc.\n");
+                }
+            }
+            case 11 -> {
+                if (n != 0)
+                {
+                    System.out.format("11. Kiểm tra mảng có phải là mảng tăng dần.\n");
+                    xuatMang();
+                    if(checkMangTangDan() == true)
                     {
-                        
+                        System.out.println("Mảng trên là mảng có các phần tử tăng dần.");
                     }
                     else
                     {
-                        System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
-                        System.out.format("Hay nhan Enter de tiep tuc.\n");
+                        System.out.println("Mảng trên là mảng có các phần tử không tăng dần.");
                     }
                 }
-                case 10 -> {
-                    if (n != 0)
-                    {
-                        
-                    }
-                    else
-                    {
-                        System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
-                        System.out.format("Hay nhan Enter de tiep tuc.\n");
-                    }
+                else
+                {
+                    System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
+                    System.out.format("Hay nhan Enter de tiep tuc.\n");
                 }
-                case 11 -> {
-                    if (n != 0)
-                    {
-                        
-                    }
-                    else
-                    {
-                        System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
-                        System.out.format("Hay nhan Enter de tiep tuc.\n");
-                    }
+            }
+            case 12 -> {
+                if (n != 0)
+                {
+                    System.out.format("12. Tìm giá trị lớn nhất trong mảng.\n");
+                    xuatMang();
+                    System.out.println("Giá trị lớn nhất trong mảng: "+elementMax());
                 }
-                case 12 -> {
-                    if (n != 0)
-                    {
-                        
-                    }
-                    else
-                    {
-                        System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
-                        System.out.format("Hay nhan Enter de tiep tuc.\n");
-                    }
+                else
+                {
+                    System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
+                    System.out.format("Hay nhan Enter de tiep tuc.\n");
                 }
-                case 15 -> {
-                    if (n != 0)
-                    {
-                        System.out.format("15. Đảo ngược mảng.\n");
-                        xuatMang();
-                        System.out.println("Mảng sau khi đảo ngược:");
-                        daoNguocMang();
-                        xuatMang();
-                    }
-                    else
-                    {
-                        System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
-                        System.out.format("Hay nhan Enter de tiep tuc.\n");
-                    }
+            }
+            case 13 -> {
+                if (n != 0)
+                {
+                    System.out.format("13. Tìm giá trị nhỏ nhất trong mảng.\n");
+                    xuatMang();
+                    System.out.println("Giá trị nhỏ nhất trong mảng: "+elementMin());
                 }
-                case 0 -> System.out.format("Ban da chon thoat chuong trinh.\n");
-                default -> {
-                    System.out.format("So ban nhap khong co trong chuong trinh!\nVui long nhap lai!!!\n(So ban nhap phai trong khoang tu 1 den 9)\n");
-                    System.out.format("Vui long nhan Enter de tiep tuc.\n");
+                else
+                {
+                    System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
+                    System.out.format("Hay nhan Enter de tiep tuc.\n");
                 }
+            }
+            case 14 -> {
+                if (n != 0)
+                {
+                    System.out.format("14. Tìm số âm lớn nhất trong mảng.\n");
+                    xuatMang();
+                    System.out.print("\nSố âm lớn nhất trong mảng: "+ soAmLonNhat());
                 }
+                else
+                {
+                    System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
+                    System.out.format("Hay nhan Enter de tiep tuc.\n");
+                }
+            }
+            case 15 -> {
+                if (n != 0)
+                {
+                    System.out.format("15. Đảo ngược mảng.\n");
+                    xuatMang();
+                    System.out.println("Mảng sau khi đảo ngược:");
+                    daoNguocMang();
+                    xuatMang();
+                }
+                else
+                {
+                    System.out.format("Ban chua tao mang. Vui long tao mang truoc khi thuc hien yeu cau.\n");
+                    System.out.format("Hay nhan Enter de tiep tuc.\n");
+                }
+            }
+            case 0 -> System.out.format("Ban da chon thoat chuong trinh.\n");
+            default -> {
+                System.out.format("So ban nhap khong co trong chuong trinh!\nVui long nhap lai!!!\n(So ban nhap phai trong khoang tu 1 den 9)\n");
+                System.out.format("Vui long nhan Enter de tiep tuc.\n");
+            }
+            }
         } while (c != 0);
     }
 
@@ -398,11 +473,14 @@ public class MangMotChieu
     //Bai 12
     public boolean checkMangTangDan()
     {
-         for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++)
         {
-            if(a[i] > a[i + 1])
+            for (int j = i + 1; j < n; j++)
             {
-                return false;
+                if(a[i] >= a[j])
+                {
+                    return false;
+                }
             }
         }
          return true;
@@ -428,7 +506,7 @@ public class MangMotChieu
             {
                     if (a[i] > max)
                     {
-                            max = a[i];
+                        max = a[i];
                     }
             }
             return max;
@@ -439,10 +517,13 @@ public class MangMotChieu
         int max = a[0];
             for (int i = 0; i < n; i++)
             {
-                    if ((a[i] > max) && (a[i] < 0))
+                if((a[i] < 0))
+                {
+                   if ((a[i] > max))
                     {
-                            max = a[i];
-                    }
+                        max = a[i];
+                    } 
+                }               
             }
             return max;
     }
