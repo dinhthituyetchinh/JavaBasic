@@ -410,18 +410,15 @@ public class MangHaiChieu
     
      public boolean  checkTangDanTrenK(int k)
     {
-        for (int i = 0; i < dong; i++)
+        for (int j = 0; j < cot - 1; j++)
         {
-            for (int j = 0; j < cot; j++)
+            for (int t = j + 1; t < cot; t++)
             {
-                if(i == k)
+
+                if(a[k][j] > a[k][t])
                 {
-                    if(a[k][j] > a[k][j + 1])
-                    {
-                       return false;
-                    }
-                }
-               
+                   return false;
+                }               
             }
         }
         return true;
@@ -461,9 +458,9 @@ public class MangHaiChieu
     }
     public void lietKeDongChuaToanGiaTriChan()
     {
-        int flag = 1;
         for (int i = 0; i < dong; i++)
         {
+            int flag = 1;
             for (int j = 0; j < cot; j++)
             {
                 if(checkSoChan(a[i][j]) == false)
