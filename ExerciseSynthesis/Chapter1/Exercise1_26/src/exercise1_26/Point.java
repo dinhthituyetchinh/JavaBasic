@@ -4,12 +4,21 @@
  */
 package exercise1_26;
 
-import java.util.Scanner;
 
 /**
  *
  * @author Tuyet Chinh
  */
-public class Scan {
-    public static Scanner scanner = new Scanner(System.in);
+public class Point {
+    public double x, y;
+
+    public Point() {
+        x = 0;
+        y = 0;
+    }
+
+    public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
 }

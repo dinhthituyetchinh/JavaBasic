@@ -24,9 +24,11 @@ public class Diem {
         y = Scan.scanner.nextInt();
     }
     
-    public void output()
-    {
-        System.out.println("Toạ độ điểm x: "+x);       
-        System.out.println("Toạ độ điểm y: "+y);
+    public void hienThi() {
+        System.out.println("Tọa độ: (" + x + ", " + y + ")");
+    }
+    public void diChuyen(int dx, int dy) {
+        x += dx;
+        y += dy;
     }
 }

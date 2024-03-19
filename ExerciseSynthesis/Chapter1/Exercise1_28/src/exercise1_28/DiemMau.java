@@ -15,25 +15,14 @@ public class DiemMau extends Diem{
         super(x, y);
         this.mau = mau;
     }
-    
-//    public void ganMau(String mau)
-//    {
-//        
-//    }
-    
-    @Override
-    public void input()
-    {
-        super.input();
-        System.out.print("Nhập vào màu: ");
-        mau = Scan.scanner.next();
+
+    public void ganMau(String mau) {
+        this.mau = mau;
     }
-    
+
     @Override
-    public void output()
-    {
-        super.output();
-        System.out.println("Màu: "+mau);    
+    public void hienThi() {
+        System.out.println("Tọa độ: (" + x + ", " + y + "), Màu: " + mau);
     }
     
 }
