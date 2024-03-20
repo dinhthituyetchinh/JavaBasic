@@ -4,6 +4,8 @@
  */
 package exercise2_2;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Tuyet Chinh
@@ -51,6 +53,7 @@ public class GiaiPhuongTrinhBac2 extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Giải phương trình bậc 2");
 
+        jPanelNhap.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51)), "Nhập a, b, c", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 51, 51))); // NOI18N
         jPanelNhap.setToolTipText("");
         jPanelNhap.setName(""); // NOI18N
 
@@ -59,6 +62,12 @@ public class GiaiPhuongTrinhBac2 extends javax.swing.JFrame {
         jLabel3.setText("b:");
 
         jLabel4.setText("c:");
+
+        txtA.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAKeyReleased(evt);
+            }
+        });
 
         jLabel5.setText("Ket Qua");
 
@@ -75,7 +84,7 @@ public class GiaiPhuongTrinhBac2 extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelNhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtA)
+                    .addComponent(txtA, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
                     .addComponent(txtC)
                     .addComponent(txtB))
                 .addGap(45, 45, 45))
@@ -86,8 +95,8 @@ public class GiaiPhuongTrinhBac2 extends javax.swing.JFrame {
                         .addComponent(jLabel5))
                     .addGroup(jPanelNhapLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(txtKQ, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                        .addComponent(txtKQ, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelNhapLayout.setVerticalGroup(
             jPanelNhapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,8 +120,15 @@ public class GiaiPhuongTrinhBac2 extends javax.swing.JFrame {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
+        jPanelThaoTac.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)), "Chọn thao tác"));
+
         btnGiai.setBackground(new java.awt.Color(204, 255, 255));
         btnGiai.setText("Giải");
+        btnGiai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGiaiActionPerformed(evt);
+            }
+        });
 
         btnXoa.setBackground(new java.awt.Color(204, 255, 255));
         btnXoa.setText("Xoá trắng");
@@ -146,7 +162,7 @@ public class GiaiPhuongTrinhBac2 extends javax.swing.JFrame {
         jPanelThaoTacLayout.setVerticalGroup(
             jPanelThaoTacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelThaoTacLayout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addGroup(jPanelThaoTacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGiai)
                     .addComponent(btnXoa)
@@ -179,9 +195,9 @@ public class GiaiPhuongTrinhBac2 extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jPanelNhap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelThaoTac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanelNhap.getAccessibleContext().setAccessibleName("");
@@ -191,7 +207,10 @@ public class GiaiPhuongTrinhBac2 extends javax.swing.JFrame {
 
     private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        JOptionPane.showMessageDialog(
+        null, "Bạn có muốn thoát?", "Information", JOptionPane.INFORMATION_MESSAGE);
+           System.exit(0); 
+        
     }//GEN-LAST:event_btnThoatActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
@@ -201,6 +220,55 @@ public class GiaiPhuongTrinhBac2 extends javax.swing.JFrame {
         txtC.setText("");
         txtKQ.setText("");
     }//GEN-LAST:event_btnXoaActionPerformed
+
+    private void btnGiaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGiaiActionPerformed
+        // TODO add your handling code here:
+        int soThuNhat = Integer.parseInt(txtA.getText());
+        int soThuHai = Integer.parseInt(txtB.getText());
+        int soThuBa = Integer.parseInt(txtC.getText());
+        PhuongTrinhBacHai pt = new PhuongTrinhBacHai(soThuNhat, soThuHai, soThuBa);
+//        Test case 1
+//           Giải phương trình 3x2 + 2x + 5 = 0 (4)
+//           Tính Δ = 22 - 4.3.5 = -56 < 0 => phương trình (4) vô nghiệm.
+        if(pt.tinhDelta()< 0)
+        {
+            txtKQ.setText("Phương trình vô nghiệm");
+            return;
+        }
+         double[] result = pt.giaiPT();
+        //        Test case 2
+        //        Giải phương trình x2 – 4x +4 = 0 (5)
+        //        Tính Δ = (-4)2 - 4.4.1 = 0 => phương trình (5) có nghiệm kép:
+        //
+        //        x_{1} =x_{2} =\frac{-(-4)}{2.1} =2
+        if(pt.tinhDelta()== 0)
+        {
+            
+            txtKQ.setText("Phương trình có nghiệm kép: x1 = x2 = "+String.format("%.2f", result[0]));
+            return;
+        }
+            //        Test case 3
+
+//        Giải phương trình 2x2 - 7x + 3 = 0 (3)
+//        Tính Δ = (-7)2 - 4.2.3 = 49 - 24= 25 > 0 => (3) có 2 nghiệm phân biệt:
+//           x1 = 3, x2 = 1/2
+        if(pt.tinhDelta() > 0)
+        {
+            txtKQ.setText("Phương trình có nghiệm: x1 = "+String.format("%.2f", result[0])+",x2 = "+String.format("%.2f", result[1]));
+        }
+    }//GEN-LAST:event_btnGiaiActionPerformed
+
+    private void txtAKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAKeyReleased
+        // TODO add your handling code here:
+        int soThuNhat = Integer.parseInt(txtA.getText());
+       if(soThuNhat == 0)
+       {
+            JOptionPane.showMessageDialog(
+        null, "a phải khác 0!", "Information", JOptionPane.INFORMATION_MESSAGE);
+            txtA.setText("");
+            txtA.requestFocusInWindow();
+       }      
+    }//GEN-LAST:event_txtAKeyReleased
 
     /**
      * @param args the command line arguments
