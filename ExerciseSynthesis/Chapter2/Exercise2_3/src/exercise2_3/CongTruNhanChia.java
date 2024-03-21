@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package exercise3_1;
+package exercise2_3;
 
 import javax.swing.JOptionPane;
 
@@ -61,6 +61,11 @@ public class CongTruNhanChia extends javax.swing.JFrame {
 
         btnGiai.setBackground(new java.awt.Color(153, 204, 255));
         btnGiai.setText("Giải");
+        btnGiai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGiaiActionPerformed(evt);
+            }
+        });
 
         btnXoa.setBackground(new java.awt.Color(153, 204, 255));
         btnXoa.setText("Xoá");
@@ -228,10 +233,10 @@ public class CongTruNhanChia extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
@@ -276,7 +281,10 @@ public class CongTruNhanChia extends javax.swing.JFrame {
         null, "Bạn có muốn thoát?", "Information", JOptionPane.INFORMATION_MESSAGE);
            System.exit(0); 
     }//GEN-LAST:event_btnThoatActionPerformed
-
+    private void unChecked()
+    {
+        
+    }
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
         // TODO add your handling code here:
         txtNhapA.setText("");
@@ -285,6 +293,37 @@ public class CongTruNhanChia extends javax.swing.JFrame {
         
         txtNhapA.requestFocusInWindow();
     }//GEN-LAST:event_btnXoaActionPerformed
+
+    private void btnGiaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGiaiActionPerformed
+        // TODO add your handling code here:
+        double soThuNhat = Double.parseDouble(txtNhapA.getText());
+        double soThuHai = Double.parseDouble(txtNhapB.getText());
+
+        TinhToan tt = new TinhToan(soThuNhat, soThuHai);
+        if(radCong.isSelected() == true)
+        {
+            txtKQ.setText(String.format("%.2f", tt.cong()));
+            return;
+        }
+        if(radTru.isSelected() == true)
+        {
+            txtKQ.setText(String.format("%.2f", tt.tru()));
+            return;
+
+        }
+        if(radNhan.isSelected() == true)
+        {
+            txtKQ.setText(String.format("%.2f", tt.nhan()));
+            return;
+
+        }
+        if(radChia.isSelected() == true)
+        {
+            txtKQ.setText(String.format("%.2f", tt.chia()));
+            return;
+
+        }
+    }//GEN-LAST:event_btnGiaiActionPerformed
 
     /**
      * @param args the command line arguments
