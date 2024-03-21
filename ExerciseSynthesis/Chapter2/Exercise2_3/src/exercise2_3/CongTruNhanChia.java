@@ -4,6 +4,7 @@
  */
 package exercise2_3;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,6 +18,12 @@ public class CongTruNhanChia extends javax.swing.JFrame {
      */
     public CongTruNhanChia() {
         initComponents();
+        
+        ButtonGroup bG = new ButtonGroup();
+        bG.add(radCong);
+        bG.add(radTru);
+        bG.add(radNhan);
+        bG.add(radChia);
     }
 
     /**
@@ -28,6 +35,9 @@ public class CongTruNhanChia extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnGiai = new javax.swing.JButton();
@@ -38,7 +48,7 @@ public class CongTruNhanChia extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtNhapA = new javax.swing.JTextField();
         txtNhapB = new javax.swing.JTextField();
-        jPanel3 = new javax.swing.JPanel();
+        pChonPT = new javax.swing.JPanel();
         radCong = new javax.swing.JRadioButton();
         radTru = new javax.swing.JRadioButton();
         radNhan = new javax.swing.JRadioButton();
@@ -113,7 +123,7 @@ public class CongTruNhanChia extends javax.swing.JFrame {
 
         jLabel3.setText("nhập b:");
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Chọn phép toán"));
+        pChonPT.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Chọn phép toán"));
 
         radCong.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         radCong.setForeground(new java.awt.Color(153, 153, 153));
@@ -131,30 +141,30 @@ public class CongTruNhanChia extends javax.swing.JFrame {
         radChia.setForeground(new java.awt.Color(153, 153, 153));
         radChia.setText("Chia");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout pChonPTLayout = new javax.swing.GroupLayout(pChonPT);
+        pChonPT.setLayout(pChonPTLayout);
+        pChonPTLayout.setHorizontalGroup(
+            pChonPTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pChonPTLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(pChonPTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(radNhan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(radCong, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(pChonPTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(radTru, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(radChia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        pChonPTLayout.setVerticalGroup(
+            pChonPTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pChonPTLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pChonPTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(radCong)
                     .addComponent(radTru))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pChonPTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(radNhan)
                     .addComponent(radChia))
                 .addContainerGap(16, Short.MAX_VALUE))
@@ -185,7 +195,7 @@ public class CongTruNhanChia extends javax.swing.JFrame {
                                     .addComponent(txtNhapB)))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(pChonPT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -200,7 +210,7 @@ public class CongTruNhanChia extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(txtNhapB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pChonPT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -290,7 +300,10 @@ public class CongTruNhanChia extends javax.swing.JFrame {
         txtNhapA.setText("");
         txtNhapB.setText("");
         txtKQ.setText("");
-        
+        radCong.setSelected(false);
+        radTru.setSelected(false);
+        radNhan.setSelected(false);
+        radChia.setSelected(false);      
         txtNhapA.requestFocusInWindow();
     }//GEN-LAST:event_btnXoaActionPerformed
 
@@ -357,6 +370,8 @@ public class CongTruNhanChia extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new CongTruNhanChia().setVisible(true);
+                
+                
             }
         });
     }
@@ -365,6 +380,9 @@ public class CongTruNhanChia extends javax.swing.JFrame {
     private javax.swing.JButton btnGiai;
     private javax.swing.JButton btnThoat;
     private javax.swing.JButton btnXoa;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -374,8 +392,8 @@ public class CongTruNhanChia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel pChonPT;
     private javax.swing.JRadioButton radChia;
     private javax.swing.JRadioButton radCong;
     private javax.swing.JRadioButton radNhan;

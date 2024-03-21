@@ -4,6 +4,9 @@
  */
 package exercise2_5;
 
+import java.awt.Button;
+import javax.swing.ButtonGroup;
+
 /**
  *
  * @author Tuyet Chinh
@@ -15,6 +18,22 @@ public class Register extends javax.swing.JFrame {
      */
     public Register() {
         initComponents();
+        ButtonGroup btn = new ButtonGroup();
+        btn.add(radMale);
+        btn.add(radFemale);
+        
+        String[] provinces = {
+            "Hà Nội",
+            "TP.Hồ Chí Minh",
+            "Gia Lai",
+            "Lâm Đồng",
+            "Long An",
+            "Nha Trang",
+            "Khánh Hoà"
+        };
+        
+        //cmbProvince.addItem(new ComboItem("Visible String 1", "Value 1"));
+
     }
 
     /**
@@ -26,6 +45,8 @@ public class Register extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -37,10 +58,10 @@ public class Register extends javax.swing.JFrame {
         btnReset = new javax.swing.JButton();
         txtName = new javax.swing.JTextField();
         txtDateOfBirth = new javax.swing.JTextField();
-        Email = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         radMale = new javax.swing.JRadioButton();
         radFemale = new javax.swing.JRadioButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbProvince = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,12 +94,17 @@ public class Register extends javax.swing.JFrame {
         btnReset.setBackground(new java.awt.Color(204, 204, 255));
         btnReset.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
 
         txtName.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
 
         txtDateOfBirth.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
 
-        Email.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        txtEmail.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
 
         radMale.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         radMale.setText("Male");
@@ -86,8 +112,8 @@ public class Register extends javax.swing.JFrame {
         radFemale.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         radFemale.setText("Female");
 
-        jComboBox1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbProvince.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        cmbProvince.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,18 +138,18 @@ public class Register extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(txtName)
                                     .addComponent(txtDateOfBirth)
-                                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addGap(112, 112, 112)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(99, 99, 99)
                                         .addComponent(radMale)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(radFemale)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(cmbProvince, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(67, 67, 67)
                                 .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,7 +173,7 @@ public class Register extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -156,7 +182,7 @@ public class Register extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbProvince, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -168,6 +194,15 @@ public class Register extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        // TODO add your handling code here:
+        txtName.setText("");
+        txtDateOfBirth.setText("");
+        txtEmail.setText("");
+        radMale.setSelected(false);
+        radFemale.setSelected(false);
+    }//GEN-LAST:event_btnResetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,10 +240,11 @@ public class Register extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Email;
     private javax.swing.JButton btnRegister;
     private javax.swing.JButton btnReset;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JComboBox<String> cmbProvince;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -219,6 +255,7 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JRadioButton radFemale;
     private javax.swing.JRadioButton radMale;
     private javax.swing.JTextField txtDateOfBirth;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 }

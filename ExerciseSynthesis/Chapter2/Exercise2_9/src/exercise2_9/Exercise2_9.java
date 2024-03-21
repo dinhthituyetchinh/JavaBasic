@@ -2,21 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package exercise2_4;
+package exercise2_9;
 
 /**
  *
  * @author Tuyet Chinh
  */
-public class Exercise2_4 {
+public class Exercise2_9 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Calculator dt = new Calculator();
-        dt.setVisible(true);
     }
     
 }
