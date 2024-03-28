@@ -4,7 +4,14 @@
  */
 package exercise2_8;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.PrintWriter;
+import java.util.StringTokenizer;
+import java.util.Vector;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,6 +24,14 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
      */
     public QuanLyNhanVien() {
         initComponents();
+        this.setSize(800, 400);
+        header.add("Code");
+        header.add("Name");
+        header.add("Salary");
+        loadData();
+        DefaultTableModel tblModel;
+        tblModel = (DefaultTableModel) this.tblEmp.getModel();
+        tblModel.setDataVector(data, header);
     }
 
     /**
@@ -29,7 +44,7 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblEmp = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -46,7 +61,13 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jScrollPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jScrollPane1MouseReleased(evt);
+            }
+        });
+
+        tblEmp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -57,7 +78,15 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        tblEmp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblEmpMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tblEmpMouseReleased(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblEmp);
 
         jLabel1.setText("Employee List");
 
@@ -112,6 +141,11 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
         });
 
         btnRemove.setText("Remove");
+        btnRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveActionPerformed(evt);
+            }
+        });
 
         btnSaveToFile.setText("Save to file");
         btnSaveToFile.addActionListener(new java.awt.event.ActionListener() {
@@ -121,6 +155,11 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
         });
 
         btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         btnExit.setText("Exit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -177,6 +216,11 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
 
     boolean change = false;
     boolean addNew = false;
+    Vector  data = new Vector();
+    boolean changed = false;
+    Vector<String> header = new Vector<String>();
+    
+    
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
         if(change == true)
@@ -189,8 +233,56 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnExitActionPerformed
 
+
+    String filename = "./src/employees1.txt";
+    private void loadData()
+    {
+       try
+       {
+           File f = new File(filename);
+           FileReader fr = new FileReader(f);
+           BufferedReader bf = new BufferedReader(fr);
+           String aDetails;
+           while((aDetails = bf.readLine()) != null)
+           {
+               StringTokenizer stk = new StringTokenizer(aDetails, ",");
+               String code = stk.nextToken();
+               String name = stk.nextToken();
+               String salaryStr = stk.nextToken();
+               Vector<String> v = new Vector<String>();
+               v.add(code);
+               v.add(name);
+               v.add(salaryStr);
+           }
+           bf.close();
+           fr.close();
+       }
+       catch(Exception  e)
+       {
+           JOptionPane.showConfirmDialog(this, "the files "+filename + " not found ");
+           
+       }
+    }
     private void btnSaveToFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveToFileActionPerformed
         // TODO add your handling code here:
+        try
+        {
+            File f = new File(filename);
+            PrintWriter pf = new PrintWriter(f);
+            int n = tblEmp.getRowCount();
+            for(int i = 0; i < n; i++)
+            {
+                Vector<String> v = (Vector<String>) (data.get(i));
+                String s = v.get(0) +","+v.get(1)+","+v.get(2);
+                pf.println(s);
+            }
+            pf.close();
+            changed = false;
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showConfirmDialog(this, e);
+        }
     }//GEN-LAST:event_btnSaveToFileActionPerformed
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
@@ -202,6 +294,69 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
         this.txtSalary.setText("");
         this.txtCode.requestFocus();
     }//GEN-LAST:event_btnNewActionPerformed
+
+    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        // TODO add your handling code here:
+        int pos = this.tblEmp.getSelectedRow();
+        if(pos >= 0)
+        {
+            String code = (String) (tblEmp.getValueAt(pos, 0));
+            if(JOptionPane.showConfirmDialog(this, "Delete the " + code + "employee ?") == JOptionPane.OK_OPTION)
+            {
+                data.remove(pos);
+                tblEmp.updateUI();
+                changed = true;
+            }
+        }
+    }//GEN-LAST:event_btnRemoveActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        // TODO add your handling code here:
+        String code = txtCode.getText();
+        String name = txtName.getText();
+        String salaryStr = txtSalary.getText();
+        if(addNew)
+        {
+            Vector v = new Vector();
+            v.add(code);
+            v.add(name);
+            v.add(salaryStr);
+            data.add(v);
+            addNew = false;
+        }
+        else
+        {
+            int pos = tblEmp.getSelectedRow();
+            Vector v = (Vector) data.get(pos);
+            v.set(1, name);
+            v.set(2, salaryStr);
+        }
+        tblEmp.updateUI();
+        change = true;
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void jScrollPane1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane1MouseReleased
+    }//GEN-LAST:event_jScrollPane1MouseReleased
+
+    private void tblEmpMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblEmpMouseReleased
+        // TODO add your handling code here:
+        if(this.tblEmp.isEditing())
+        {
+            int row = tblEmp.getSelectedRow();
+            int column = tblEmp.getSelectedColumn();
+            tblEmp.getCellEditor(row, column).cancelCellEditing();
+        }
+    }//GEN-LAST:event_tblEmpMouseReleased
+
+    private void tblEmpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblEmpMouseClicked
+        // TODO add your handling code here:
+        int row = this.tblEmp.getSelectedRow();
+        this.txtCode.setText((String) (tblEmp.getValueAt(row, 0)));
+        this.txtCode.setEditable(false);
+        this.txtName.setText((String) (tblEmp.getValueAt(row, 1)));
+        this.txtSalary.setText((String) (tblEmp.getValueAt(row, 2)));
+        addNew = false;
+    }//GEN-LAST:event_tblEmpMouseClicked
 
     /**
      * @param args the command line arguments
@@ -250,7 +405,7 @@ public class QuanLyNhanVien extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblEmp;
     private javax.swing.JTextField txtCode;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtSalary;

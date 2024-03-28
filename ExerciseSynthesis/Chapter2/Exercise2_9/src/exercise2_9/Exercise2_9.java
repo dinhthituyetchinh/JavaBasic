@@ -15,6 +15,8 @@ public class Exercise2_9 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        QuanLyNhanVien dt = new QuanLyNhanVien();
+        dt.setVisible(true);
     }
     
 }
